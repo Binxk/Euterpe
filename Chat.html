@@ -326,6 +326,42 @@
                 </div>
             `).join('');
         }
+
+<script>  
+  // Load chat data from JSON file  
+  fetch('chat-data.json')  
+   .then(response => response.json())  
+   .then(data => {  
+    const chatContainer = document.getElementById('chat-container');  
+    data.chats.forEach(chat => {  
+      const chatElement = document.createElement('div');  
+      chatElement.innerHTML = `  
+       <p>${chat.username}: ${chat.message}</p>  
+      `;  
+      chatContainer.appendChild(chatElement);  
+    });  
+   });  
+  
+  // Save chat data to JSON file  
+  function saveChatData() {  
+   const chatContainer = document.getElementById('chat-container');  
+   const chats = [];  
+   chatContainer.children.forEach(child => {  
+    const username = child.querySelector('p').textContent.split(':')[0].trim();  
+    const message = child.querySelector('p').textContent.split(':')[1].trim();  
+    chats.push({ username, message });  
+   });  
+   fetch('chat-data.json', {  
+    method: 'PUT',  
+    headers: { 'Content-Type': 'application/json' },  
+    body: JSON.stringify({ chats }),  
+   });  
+  }  
+  
+  // Call saveChatData function when user submits a new message  
+  document.getElementById('send-button').addEventListener('click', saveChatData);  
+
+        
     </script>
 </body>
 </html>
