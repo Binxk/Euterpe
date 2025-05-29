@@ -30,14 +30,8 @@
       position: absolute;
       display: block;
       z-index: 10;
-      background-color: rgba(255, 255, 255, 0); /* ensure it's clickable */
-    }
-
-    .click-zone::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
+      background-color: rgba(0, 0, 0, 0.01); /* nearly invisible but reliably clickable */
+      text-indent: -9999px;
     }
 
     .gigs {
@@ -67,10 +61,11 @@
   <!-- Fullscreen Image with Clickable Areas -->
   <div class="image-map">
     <img src="https://i.imgur.com/VqhCrI8.png" alt="Euterpe Tamagotchi" class="tamagotchi-img">
-    <a href="https://euterpeband.com/Gigs.html" class="click-zone gigs" title="Gigs"></a>
-    <a href="https://euterpeband.bandcamp.com/" class="click-zone merch" title="Merch" target="_blank"></a>
-    <a href="https://euterpeband.com/music" class="click-zone music" title="Music"></a>
+    <a href="https://euterpeband.com/Gigs.html" class="click-zone gigs">Gigs</a>
+    <a href="https://euterpeband.bandcamp.com/" class="click-zone merch" target="_blank">Merch</a>
+    <a href="https://euterpeband.com/music" class="click-zone music">Music</a>
   </div>
 
 </body>
 </html>
+
