@@ -3,55 +3,68 @@
 <head>
   <title>Euterpe Tamagotchi</title>
   <style>
-    body {
-      text-align: center;
-      font-family: sans-serif;
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
       background-color: #fffafc;
-    }
-
-    .tamagotchi-img {
-      max-width: 500px;
-      width: 90%;
-      cursor: pointer;
+      font-family: sans-serif;
     }
 
     .image-map {
       position: relative;
-      display: inline-block;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .tamagotchi-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .click-zone {
       position: absolute;
       display: block;
       z-index: 10;
-      background-color: rgba(255, 0, 0, 0.0); /* invisible but clickable */
+      background-color: rgba(255, 255, 255, 0); /* ensure it's clickable */
+    }
+
+    .click-zone::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
     }
 
     .gigs {
-      top: 55%;
-      left: 22%;
-      width: 15%;
+      top: 75%;
+      left: 21%;
+      width: 14%;
       height: 8%;
     }
 
     .merch {
-      top: 55%;
+      top: 75%;
       left: 42%;
-      width: 15%;
+      width: 14%;
       height: 8%;
     }
 
     .music {
-      top: 55%;
-      left: 62%;
-      width: 15%;
+      top: 75%;
+      left: 63%;
+      width: 14%;
       height: 8%;
     }
   </style>
 </head>
 <body>
 
-  <!-- Image with Clickable Areas -->
+  <!-- Fullscreen Image with Clickable Areas -->
   <div class="image-map">
     <img src="https://i.imgur.com/VqhCrI8.png" alt="Euterpe Tamagotchi" class="tamagotchi-img">
     <a href="https://euterpeband.com/Gigs.html" class="click-zone gigs" title="Gigs"></a>
