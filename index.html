@@ -72,37 +72,41 @@
       height: 20.5%;
     }
 
-  /* TWO GIFS SIDE BY SIDE */
-.gif-row {
-  position: absolute;
-  top: 80%;
-  left: 85%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  z-index: 999;
-}
+    /* TWO GIFS SIDE BY SIDE */
+    .gif-row {
+      position: absolute;
+      top: 80%;
+      left: 85%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 999;
+    }
 
-.gif-row img {
-  width: 120px;
-  height: auto;
-}
+    .gif-row img {
+      width: 120px;
+      height: auto;
+    }
 
-.gif-left {
-  position: relative;
-  top: -12px;   /* raise left gif */
-}
+    .gif-left {
+      position: relative;
+      top: -12px;   /* raise left gif */
+    }
 
-.gif-right {
-  position: relative;
-  top: 0;
-}
-    
+    .gif-right {
+      position: relative;
+      top: 0;
+    }
+  </style>
+
+</head>
+<body>
+
   <!-- two gifs side by side -->
-<div class="gif-row">
-  <img class="gif-left" src="RAW_URL_1" alt="Euterpe GIF 1">
-  <img class="gif-right" src="RAW_URL_2" alt="Euterpe GIF 2">
-</div>
+  <div class="gif-row">
+    <img class="gif-left" src="ezgif.com-crop.gif" alt="Euterpe GIF 1">
+    <img class="gif-right" src="ezgif.com-gif-to-mp4-converter.gif" alt="Euterpe GIF 2">
+  </div>
 
   <div class="image-map">
     <img src="https://i.imgur.com/VqhCrI8.png" class="tamagotchi-img" alt="Euterpe Tamagotchi">
@@ -112,13 +116,13 @@
   </div>
 
   <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.cookie.split(";").forEach(function(cookie) {
-      const eq = cookie.indexOf("=");
-      const name = eq > -1 ? cookie.substr(0, eq).trim() : cookie.trim();
-      document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;";
+    document.addEventListener("DOMContentLoaded", function() {
+      document.cookie.split(";").forEach(function(cookie) {
+        const eq = cookie.indexOf("=");
+        const name = eq > -1 ? cookie.substr(0, eq).trim() : cookie.trim();
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;";
+      });
     });
-  });
   </script>
 
   <audio id="bg-music" src="Dowryinternet.mp3" loop></audio>
@@ -135,7 +139,5 @@
     document.addEventListener('click', startBgMusicOnce);
   </script>
 
-</body>
-</html>
 </body>
 </html>
