@@ -76,33 +76,34 @@
 
     
 
-    /* GIFS */
+  /* GIFS bottom-right */
 .gif-row {
-  position: fixed;    
-  bottom: 20px;        
-  left: 50%;
-  transform: translateX(-50%);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
   display: flex;
+  flex-direction: row;
+  align-items: flex-end;   /* align bottoms so vertical offsets work correctly */
   gap: 10px;
   z-index: 999;
 }
 
-    .gif-row img {
-      width: 250px;
-      height: auto;
-    }
-
+/* Left GIF – higher */
 .gif-left {
+  width: 180px;
   position: relative;
-  top: -12px;
-  width: 180px;   
+  bottom: 40px;   /* raise left GIF more */
 }
 
+/* Right GIF – normal baseline */
 .gif-right {
+  width: 150px;
   position: relative;
-  top: 0;
-  width: 150px;   
+  bottom: 0;      /* stays lower */
 }
+
+
+    
   </style>
 
 </head>
