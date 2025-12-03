@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Euterpe </title>
+  <title>Euterpe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     html, body {
       margin: 0;
@@ -12,26 +14,30 @@
       font-family: sans-serif;
     }
 
-    .image-map {
-      position: relative;
-      width: 100%;
-      height: 100%;
+    body {
       display: flex;
       align-items: center;
       justify-content: center;
+      min-height: 100vh;
+    }
+
+    .image-map {
+      position: relative;
+      width: 100vw;
+      max-width: 480px;
     }
 
     .tamagotchi-img {
-      width: auto;
-      height: 80vh;
       display: block;
+      width: 100%;
+      height: auto;
     }
 
     .click-zone {
       position: absolute;
       display: block;
       z-index: 10;
-      background-color: rgba(255, 255, 255, 0); /* fully transparent */
+      background-color: rgba(255, 255, 255, 0);
       text-indent: -9999px;
     }
 
@@ -59,7 +65,6 @@
 </head>
 <body>
 
-  <!-- Centered Image with Clickable Areas -->
   <div class="image-map">
     <img src="https://i.imgur.com/VqhCrI8.png" alt="Euterpe Tamagotchi" class="tamagotchi-img">
     <a href="https://euterpeband.com/Gigs.html" class="click-zone gigs">Gigs</a>
@@ -68,5 +73,4 @@
   </div>
 
 </body>
-</html>
 </html>
