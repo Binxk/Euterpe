@@ -21,13 +21,23 @@
     .image-map {
       position: relative;
       width: 100%;
-      max-width: 480px; /* keeps layout tidy on large screens */
+      max-width: 480px;
     }
 
     .tamagotchi-img {
       width: 100%;
       height: auto;
       display: block;
+    }
+
+    /* REMOVE GREY TAP HIGHLIGHT ON MOBILE */
+    a, .click-zone {
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      outline: none;
+      background: none !important;
+    }
+    a:active, a:focus {
+      background: none !important;
     }
 
     /* CLICK ZONES */
@@ -37,11 +47,8 @@
       background: rgba(255, 255, 255, 0);
       z-index: 10;
       text-indent: -9999px;
+      height: 13%;
     }
-
-    .click-zone {
-  height: 13%; 
-}
     
     /* coordinates */
 
@@ -77,6 +84,7 @@
     <a href="https://euterpeband.bandcamp.com/merch" class="click-zone merch" target="_blank"></a>
     <a href="https://euterpeband.com/music" class="click-zone music"></a>
   </div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   document.cookie.split(";").forEach(function(cookie) {
