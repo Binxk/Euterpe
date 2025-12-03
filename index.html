@@ -8,39 +8,38 @@
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #ffffff;
-      font-family: sans-serif;
+      background: white;
     }
 
     body {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       min-height: 100vh;
     }
 
     .image-map {
       position: relative;
-      width: 100vw;
-      max-width: 480px;
+      width: 100%;
+      max-width: 480px; /* keeps layout tidy on large screens */
     }
 
     .tamagotchi-img {
-      display: block;
       width: 100%;
       height: auto;
+      display: block;
     }
 
+    /* CLICK ZONES — these now scale perfectly with the image */
     .click-zone {
       position: absolute;
       display: block;
+      background: rgba(255, 255, 255, 0);
       z-index: 10;
-      background-color: rgba(255, 255, 255, 0);
       text-indent: -9999px;
     }
 
+    /* Your original coordinates preserved */
     .gigs {
       top: 76.2%;
       left: 12.3%;
@@ -62,14 +61,15 @@
       height: 5.5%;
     }
   </style>
+
 </head>
 <body>
 
   <div class="image-map">
-    <img src="https://i.imgur.com/VqhCrI8.png" alt="Euterpe Tamagotchi" class="tamagotchi-img">
-    <a href="https://euterpeband.com/Gigs.html" class="click-zone gigs">Gigs</a>
-    <a href="https://euterpeband.bandcamp.com/merch" class="click-zone merch" target="_blank">Merch</a>
-    <a href="https://euterpeband.com/music" class="click-zone music">Music</a>
+    <img src="https://i.imgur.com/VqhCrI8.png" class="tamagotchi-img" alt="Euterpe Tamagotchi">
+    <a href="https://euterpeband.com/Gigs.html" class="click-zone gigs"></a>
+    <a href="https://euterpeband.bandcamp.com/merch" class="click-zone merch" target="_blank"></a>
+    <a href="https://euterpeband.com/music" class="click-zone music"></a>
   </div>
 
 </body>
