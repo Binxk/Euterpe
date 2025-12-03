@@ -51,7 +51,6 @@
     }
     
     /* coordinates */
-
     .gigs {
       top: 74.2%;
       left: 12.3%;
@@ -73,13 +72,31 @@
       height: 20.5%;
     }
 
-    
+    /* TWO GIFS SIDE BY SIDE */
+    .gif-row {
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 999;
+    }
+
+    .gif-row img {
+      width: 120px;
+      height: auto;
+    }
   </style>
 
 </head>
 <body>
 
-  
+  <!-- two gifs side by side -->
+  <div class="gif-row">
+    <img src="ezgif.com-crop.gif" alt="Euterpe GIF 1">
+    <img src="ezgif.com-gif-to-mp4-converter.gif" alt="Euterpe GIF 2">
+  </div>
 
   <div class="image-map">
     <img src="https://i.imgur.com/VqhCrI8.png" class="tamagotchi-img" alt="Euterpe Tamagotchi">
@@ -88,17 +105,16 @@
     <a href="https://euterpeband.com/music" class="click-zone music"></a>
   </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  document.cookie.split(";").forEach(function(cookie) {
-    const eq = cookie.indexOf("=");
-    const name = eq > -1 ? cookie.substr(0, eq).trim() : cookie.trim();
-    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;";
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.cookie.split(";").forEach(function(cookie) {
+      const eq = cookie.indexOf("=");
+      const name = eq > -1 ? cookie.substr(0, eq).trim() : cookie.trim();
+      document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;";
+    });
   });
-});
-</script>
+  </script>
 
-    <!-- ADD MUSIC HERE -->
   <audio id="bg-music" src="Dowryinternet.mp3" loop></audio>
 
   <script>
@@ -112,7 +128,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.addEventListener('click', startBgMusicOnce);
   </script>
-  <!-- END MUSIC -->
-  
+
+</body>
+</html>
 </body>
 </html>
