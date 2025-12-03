@@ -72,31 +72,37 @@
       height: 20.5%;
     }
 
-    /* TWO GIFS SIDE BY SIDE */
-    .gif-row {
-      position: absolute;
-      top: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-      z-index: 999;
-    }
+  /* TWO GIFS SIDE BY SIDE */
+.gif-row {
+  position: absolute;
+  top: 80%;
+  left: 85%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+}
 
-    .gif-row img {
-      width: 120px;
-      height: auto;
-    }
-  </style>
+.gif-row img {
+  width: 120px;
+  height: auto;
+}
 
-</head>
-<body>
+.gif-left {
+  position: relative;
+  top: -12px;   /* raise left gif */
+}
 
+.gif-right {
+  position: relative;
+  top: 0;
+}
+    
   <!-- two gifs side by side -->
-  <div class="gif-row">
-    <img src="ezgif.com-crop.gif" alt="Euterpe GIF 1">
-    <img src="ezgif.com-gif-to-mp4-converter.gif" alt="Euterpe GIF 2">
-  </div>
+<div class="gif-row">
+  <img class="gif-left" src="RAW_URL_1" alt="Euterpe GIF 1">
+  <img class="gif-right" src="RAW_URL_2" alt="Euterpe GIF 2">
+</div>
 
   <div class="image-map">
     <img src="https://i.imgur.com/VqhCrI8.png" class="tamagotchi-img" alt="Euterpe Tamagotchi">
