@@ -72,11 +72,14 @@
       width: 14.2%;
       height: 20.5%;
     }
+
     
   </style>
 
 </head>
 <body>
+
+  
 
   <div class="image-map">
     <img src="https://i.imgur.com/VqhCrI8.png" class="tamagotchi-img" alt="Euterpe Tamagotchi">
@@ -94,6 +97,22 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
+
+    <!-- ADD MUSIC HERE -->
+  <audio id="bg-music" src="Dowryinternet.mp3" loop></audio>
+
+  <script>
+    function startBgMusicOnce() {
+      var audio = document.getElementById('bg-music');
+      audio.play().catch(function (err) {
+        console.log('Playback blocked:', err);
+      });
+      document.removeEventListener('click', startBgMusicOnce);
+    }
+
+    document.addEventListener('click', startBgMusicOnce);
+  </script>
+  <!-- END MUSIC -->
   
 </body>
 </html>
