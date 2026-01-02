@@ -18,8 +18,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      min-height: 100vh;
     }
 
+    /* MAIN WRAPPER */
     .image-map {
       position: relative;
       width: 100%;
@@ -32,15 +34,20 @@
       display: block;
     }
 
+    /* REMOVE MOBILE TAP FLASH */
     a {
       -webkit-tap-highlight-color: rgba(0,0,0,0);
     }
 
+    /* CLICK ZONES */
     .click-zone {
       position: absolute;
+      display: block;
       z-index: 10;
+      background: rgba(255,255,255,0);
     }
 
+    /* ABOUT (Euterpe text area) */
     .about {
       top: 30%;
       left: 63%;
@@ -48,6 +55,7 @@
       height: 25%;
     }
 
+    /* BOTTOM BUTTONS */
     .gigs {
       top: 75%;
       left: 10%;
@@ -69,7 +77,7 @@
       height: 18%;
     }
 
-    /* Bottom-right GIFs */
+    /* BOTTOM-RIGHT GIFS */
     .gif-row {
       position: fixed;
       bottom: 20px;
@@ -88,9 +96,11 @@
 
     .gif-right {
       width: 150px;
+      position: relative;
+      bottom: 0;
     }
 
-    /* EMAIL HEART GIF */
+    /* TOP-RIGHT EMAIL GIF */
     .email-gif {
       position: fixed;
       top: 14px;
@@ -109,20 +119,20 @@
 
 <body>
 
-  <!-- EMAIL LINK -->
+  <!-- TOP-RIGHT EMAIL LINK -->
   <a href="mailto:music@euterpeband.com" class="email-gif" aria-label="Email Euterpe">
     <img src="https://media1.tenor.com/m/K8vxpMlZip0AAAAd/hearts-hearts-of-love.gif" alt="Email Euterpe">
   </a>
 
-  <!-- GIFS -->
+  <!-- BOTTOM-RIGHT GIFS -->
   <div class="gif-row">
-    <img src="ezgif.com-crop.gif" class="gif-left" alt="">
-    <img src="ezgif.com-gif-to-mp4-converter.gif" class="gif-right" alt="">
+    <img class="gif-left" src="ezgif.com-crop.gif" alt="Euterpe GIF 1">
+    <img class="gif-right" src="ezgif.com-gif-to-mp4-converter.gif" alt="Euterpe GIF 2">
   </div>
 
-  <!-- TAMAGOTCHI -->
+  <!-- TAMAGOTCHI IMAGE + CLICK ZONES -->
   <div class="image-map">
-    <img src="https://i.imgur.com/HkdzWoy.png" class="tamagotchi-img" alt="Euterpe">
+    <img src="https://i.imgur.com/HkdzWoy.png" class="tamagotchi-img" alt="Euterpe Tamagotchi">
 
     <a href="about.html" class="click-zone about"></a>
     <a href="https://euterpeband.com/Gigs.html" class="click-zone gigs"></a>
