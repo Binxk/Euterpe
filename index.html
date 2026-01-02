@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Euterpe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -9,15 +10,17 @@
       margin: 0;
       padding: 0;
       background: white;
+      width: 100%;
+      height: 100%;
     }
 
     body {
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
     }
 
+    /* MAIN WRAPPER */
     .image-map {
       position: relative;
       width: 100%;
@@ -30,119 +33,99 @@
       display: block;
     }
 
-    /* REMOVE GREY TAP HIGHLIGHT ON MOBILE */
-    a, .click-zone {
+    /* REMOVE MOBILE TAP FLASH */
+    a {
       -webkit-tap-highlight-color: rgba(0,0,0,0);
-      outline: none;
-      background: none !important;
-    }
-    a:active, a:focus {
-      background: none !important;
     }
 
     /* CLICK ZONES */
     .click-zone {
       position: absolute;
       display: block;
-      background: rgba(255, 255, 255, 0);
       z-index: 10;
-      text-indent: -9999px;
-      height: 13%;
+      background: rgba(255,255,255,0);
     }
-    
-    /* coordinates */
+
+    /* ABOUT – "Euterpe" text */
+    .about {
+      top: 30%;
+      left: 63%;
+      width: 32%;
+      height: 25%;
+    }
+
+    /* BOTTOM BUTTONS */
     .gigs {
-      top: 74.2%;
-      left: 12.3%;
-      width: 12.5%;
-      height: 20.5%;
+      top: 75%;
+      left: 10%;
+      width: 15%;
+      height: 18%;
     }
 
     .merch {
-      top: 74.2%;
-      left: 32.5%;
-      width: 18.5%;
-      height: 20.5%;
+      top: 75%;
+      left: 30%;
+      width: 22%;
+      height: 18%;
     }
 
     .music {
-      top: 76.2%;
-      left: 60.7%;
-      width: 14.2%;
-      height: 20.5%;
+      top: 75%;
+      left: 60%;
+      width: 18%;
+      height: 18%;
     }
 
+    /* GIFS */
+    .gif-row {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 999;
+      align-items: flex-end;
+    }
 
+    .gif-left {
+      width: 180px;
+      position: relative;
+      bottom: 40px;
+    }
 
-    
-
-  /* GIFS bottom-right */
-.gif-row {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;   /* align bottoms so vertical offsets work correctly */
-  gap: 10px;
-  z-index: 999;
-}
-
-/* Left GIF – higher */
-.gif-left {
-  width: 180px;
-  position: relative;
-  bottom: 40px;   /* raise left GIF more */
-}
-
-/* Right GIF – normal baseline */
-.gif-right {
-  width: 150px;
-  position: relative;
-  bottom: 0;      /* stays lower */
-}
-
-
-    
+    .gif-right {
+      width: 150px;
+    }
   </style>
-
 </head>
+
 <body>
 
-  <!-- two gifs side by side -->
+  <!-- GIFS -->
   <div class="gif-row">
-    <img class="gif-left" src="ezgif.com-crop.gif" alt="Euterpe GIF 1">
-    <img class="gif-right" src="ezgif.com-gif-to-mp4-converter.gif" alt="Euterpe GIF 2">
+    <img src="ezgif.com-crop.gif" class="gif-left" alt="">
+    <img src="ezgif.com-gif-to-mp4-converter.gif" class="gif-right" alt="">
   </div>
 
+  <!-- TAMAGOTCHI -->
   <div class="image-map">
-    <img src="https://i.imgur.com/HkdzWoy.png" class="tamagotchi-img" alt="Euterpe Tamagotchi">
+    <img src="https://i.imgur.com/HkdzWoy.png" class="tamagotchi-img" alt="Euterpe">
+
+    <a href="about.html" class="click-zone about"></a>
     <a href="https://euterpeband.com/Gigs.html" class="click-zone gigs"></a>
     <a href="https://euterpeband.bandcamp.com/merch" class="click-zone merch" target="_blank"></a>
     <a href="https://euterpeband.com/music" class="click-zone music"></a>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      document.cookie.split(";").forEach(function(cookie) {
-        const eq = cookie.indexOf("=");
-        const name = eq > -1 ? cookie.substr(0, eq).trim() : cookie.trim();
-        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;";
-      });
-    });
-  </script>
-
+  <!-- AUDIO -->
   <audio id="bg-music" src="Dowryinternet.mp3" loop></audio>
 
   <script>
     function startBgMusicOnce() {
-      var audio = document.getElementById('bg-music');
-      audio.play().catch(function (err) {
-        console.log('Playback blocked:', err);
-      });
+      const audio = document.getElementById('bg-music');
+      audio.play().catch(() => {});
       document.removeEventListener('click', startBgMusicOnce);
     }
-
     document.addEventListener('click', startBgMusicOnce);
   </script>
 
