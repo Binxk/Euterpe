@@ -20,7 +20,6 @@
       align-items: center;
     }
 
-    /* MAIN WRAPPER */
     .image-map {
       position: relative;
       width: 100%;
@@ -33,20 +32,15 @@
       display: block;
     }
 
-    /* REMOVE MOBILE TAP FLASH */
     a {
       -webkit-tap-highlight-color: rgba(0,0,0,0);
     }
 
-    /* CLICK ZONES */
     .click-zone {
       position: absolute;
-      display: block;
       z-index: 10;
-      background: rgba(255,255,255,0);
     }
 
-    /* ABOUT – "Euterpe" text */
     .about {
       top: 30%;
       left: 63%;
@@ -54,7 +48,6 @@
       height: 25%;
     }
 
-    /* BOTTOM BUTTONS */
     .gigs {
       top: 75%;
       left: 10%;
@@ -76,7 +69,7 @@
       height: 18%;
     }
 
-    /* GIFS */
+    /* Bottom-right GIFs */
     .gif-row {
       position: fixed;
       bottom: 20px;
@@ -96,10 +89,30 @@
     .gif-right {
       width: 150px;
     }
+
+    /* EMAIL HEART GIF */
+    .email-gif {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      width: 70px;
+      z-index: 1000;
+    }
+
+    .email-gif img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   </style>
 </head>
 
 <body>
+
+  <!-- EMAIL LINK -->
+  <a href="mailto:music@euterpeband.com" class="email-gif" aria-label="Email Euterpe">
+    <img src="https://media1.tenor.com/m/K8vxpMlZip0AAAAd/hearts-hearts-of-love.gif" alt="Email Euterpe">
+  </a>
 
   <!-- GIFS -->
   <div class="gif-row">
