@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Two Column Photo Layout</title>
+
+  <style>
+    /* ---------- BASE ---------- */
+
+    body{
+      margin:0;
+      padding:32px 20px;
+      background:#fff;
+      color:#111;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size:16px;
+      line-height:1.5;
+    }
+
+    .page{
+      max-width:1100px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:32px;
+      align-items:start;
+    }
+
+    /* Mobile */
+    @media (max-width: 800px){
+      .page{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ---------- COLUMNS ---------- */
+
+    .photos,
+    .text{
+      display:flex;
+      flex-direction:column;
+      gap:28px;
+    }
+
+    /* ---------- PHOTOS ---------- */
+
+    .photo-frame{
+      position:relative;
+      padding:14px;
+    }
+
+    .photo-frame img{
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius:12px;
+    }
+
+    /* ---------- STAR BORDER ---------- */
+
+    .stars{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+    }
+
+    .stars::before{
+      content:"";
+      position:absolute;
+      inset:-8px;
+
+      background:
+        radial-gradient(circle, #000 0 2px, transparent 3px)
+        0 0 / 18px 18px;
+
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+
+      padding:12px;
+      border-radius:16px;
+
+      animation: stars-move 3s linear infinite;
+    }
+
+    @keyframes stars-move{
+      from{ background-position: 0 0; }
+      to{ background-position: 72px 72px; }
+    }
+
+    /* ---------- TEXT ---------- */
+
+    .text-block h2{
+      margin:0 0 8px 0;
+      font-size:22px;
+      font-weight:700;
+    }
+
+    .text-block p{
+      margin:0 0 10px 0;
+    }
+
+    .meta{
+      font-size:13px;
+      opacity:0.7;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <!-- LEFT COLUMN: PHOTOS -->
+    <section class="photos">
+      <figure class="photo-frame">
+        <img src="https://i.imgur.com/RoYuARB.jpg" alt="Photo one">
+        <div class="stars"></div>
+      </figure>
+
+      <figure class="photo-frame">
+        <img src="https://i.imgur.com/B6KTBjK.jpeg" alt="Photo two">
+        <div class="stars"></div>
+      </figure>
+    </section>
+
+    <!-- RIGHT COLUMN: TEXT -->
+    <section class="text">
+      <div class="text-block">
+        <h2>Euterpe</h2>
+        <p>Euterpe is a four-piece, Gadigal-based post-punk and art rock band. Drawing inspiration from artists such as Black Country New Road, Wednesday, Mary in the Junkyard, and Unwound, their sound fluctuates between feelings of erraticism, intimacy, and sincerity. Such stylings are captured in their recent single, ‘´Αγνή Παρθένε (O Virgin Pure)’, which deals with themes of degradation and purity.</p>
+        <div class="meta">Optional small line</div>
+      </div>
+
+  </main>
+
+</body>
+</html>
